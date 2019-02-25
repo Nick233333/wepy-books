@@ -1,0 +1,79 @@
+<style lang="less">
+
+</style>
+<template>
+
+  <view>
+    <text>index-{{ name }}</text>
+    <button bindtap="aa">点击</button>
+  <i-tab-bar fixed="true" bindchange="handleChange">
+      <i-tab-bar-item key="homepage" icon="homepage" title="主页"></i-tab-bar-item>
+      <i-tab-bar-item key="list" icon="createtask_fill" title="列表"></i-tab-bar-item>
+    </i-tab-bar>
+  </view>
+</template>
+
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'Index',
+      "usingComponents": {
+        "i-tab-bar": "../components/weapp/tab-bar/index",
+        "i-tab-bar-item": "../components/weapp/tab-bar-item/index"
+      }
+    }
+    components = {
+
+    }
+
+    methods = {
+      aa() {
+        this.name = "new"
+        console.log(this.data.name)
+      }
+
+    }
+    handleChange ({ detail }) {
+        console.log(detail)
+    }
+    demo() {
+      console.log('demo')
+    }
+    data = {
+      name: 'nick'
+    }
+    events = {
+
+    }
+    onLaunch () {
+      console.log('onLaunch')
+    }
+
+    onLoad() {
+      console.log(this.data.name)
+      console.log('onLoad')
+    }
+
+    onShow() {
+      console.log('onShow')
+      this.demo()
+    }
+
+    onReady() {
+      this.data.name = 'abc'
+      console.log(this.data.name)
+      console.log('onReady')
+    }
+
+    onHide() {
+      console.log('onHide')
+    }
+
+    onUnload() {
+      console.log('onUnload')
+    }
+  }
+</script>

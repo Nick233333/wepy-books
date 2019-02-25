@@ -1,0 +1,15 @@
+{
+	"description": "books",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wx0f202e40ac0b9b0c",
+	"projectname": "wepy-books",
+	"miniprogramRoot": "dist/",
+	"condition": {}
+}
