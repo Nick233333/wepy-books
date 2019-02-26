@@ -1,21 +1,21 @@
-<style lang="less">
-
-</style>
 <template>
 
   <view>
     <text>index-{{ name }}</text>
     <button bindtap="aa">点击</button>
-  <i-tab-bar fixed="true" bindchange="handleChange">
-      <i-tab-bar-item key="homepage" icon="homepage" title="主页"></i-tab-bar-item>
-      <i-tab-bar-item key="list" icon="createtask_fill" title="列表"></i-tab-bar-item>
-    </i-tab-bar>
+    <tabbar></tabbar>
   </view>
+
+
 </template>
 
+<style lang="less">
+
+</style>
 
 <script>
   import wepy from 'wepy'
+  import Tabbar from '@/components/tabbar'
 
   export default class Index extends wepy.page {
     config = {
@@ -26,19 +26,18 @@
       }
     }
     components = {
-
+      tabbar: Tabbar
     }
 
     methods = {
       aa() {
         this.name = "new"
+        this.$apply()
         console.log(this.data.name)
       }
 
     }
-    handleChange ({ detail }) {
-        console.log(detail)
-    }
+
     demo() {
       console.log('demo')
     }
@@ -48,13 +47,15 @@
     events = {
 
     }
-    onLaunch () {
-      console.log('onLaunch')
-    }
 
-    onLoad() {
-      console.log(this.data.name)
+    onLoad(option) {
+      console.log(option)
+      wepy.setStorageSync('userInfo', 'nick');
+      let userInfo = wepy.getStorageSync('userInfo');
+      console.log(userInfo)
+      // wepy.clearStorageSync('userInfo')
       console.log('onLoad')
+      console.log(wepy.getStorageInfoSync('userInfo'))
     }
 
     onShow() {

@@ -1,0 +1,52 @@
+<template>
+  <view>
+    <text>list</text>
+    <tabbar></tabbar>
+  </view>
+</template>
+
+<style>
+
+</style>
+
+<script>
+  import wepy from 'wepy'
+  import Tabbar from '@/components/tabbar'
+
+  export default class List extends wepy.page {
+
+    config = {
+      navigationBarTitleText: 'List',
+      "usingComponents": {
+        "i-tab-bar": "../components/weapp/tab-bar/index",
+        "i-tab-bar-item": "../components/weapp/tab-bar-item/index"
+      }
+    }
+
+    components = {
+      tabbar: Tabbar
+    }
+
+    onLoad(option) {
+      console.log('onLoad')
+    }
+
+    onShow() {
+      console.log('onShow')
+    }
+
+    onReady() {
+      console.log('onReady')
+    }
+
+    onHide() {
+      console.log('onHide')
+    }
+
+    onUnload() {
+      console.log('onUnload')
+    }
+  }
+</script>
+
+

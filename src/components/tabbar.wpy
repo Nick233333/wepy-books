@@ -1,0 +1,27 @@
+<template>
+    <i-tab-bar fixed="true" bindchange="handleChange">
+      <i-tab-bar-item key="index" icon="homepage" title="主页"></i-tab-bar-item>
+      <i-tab-bar-item key="list" icon="createtask_fill" title="列表"></i-tab-bar-item>
+    </i-tab-bar>
+</template>
+
+<style lang="">
+
+</style>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class TabBar extends wepy.component {
+    methods = {
+      handleChange ({ detail }) {
+        wepy.navigateTo({
+          url: `${detail.key}`
+        })
+      }
+    }
+
+  }
+</script>
+
+
