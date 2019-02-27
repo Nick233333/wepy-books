@@ -5,10 +5,6 @@
     </i-tab-bar>
 </template>
 
-<style lang="">
-
-</style>
-
 <script>
   import wepy from 'wepy'
 
@@ -20,8 +16,5 @@
         })
       }
     }
-
   }
 </script>
-
-
