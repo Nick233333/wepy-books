@@ -3,6 +3,7 @@
   <view>
     <text>index-{{ name }}</text>
     <button bindtap="aa">点击</button>
+    <image style="width: 30px;height: 30px;" src="../images/logo.png"></image>
     <tabbar></tabbar>
   </view>
 
@@ -10,7 +11,7 @@
 </template>
 
 <style lang="less">
-
+@import "../style/base.less";
 </style>
 
 <script>
