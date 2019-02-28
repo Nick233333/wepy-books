@@ -14,9 +14,9 @@ export default class extends wepy.app {
         ],
         window: {
             backgroundTextStyle: 'light',
-            navigationBarBackgroundColor: '#76daff',
+            navigationBarBackgroundColor: 'fedb1d',
             navigationBarTitleText: 'Books',
-            navigationBarTextStyle: 'white'
+            navigationBarTextStyle: 'black'
         }
     }
 }
