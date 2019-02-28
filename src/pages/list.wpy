@@ -1,39 +1,39 @@
 <template>
-  <view>
-    <text>list</text>
-    <tabbar></tabbar>
-  </view>
+    <view>
+        <text>list</text>
+        <tabbar></tabbar>
+    </view>
 </template>
 
 <script>
-  import wepy from 'wepy'
-  import tabbar from '@/components/tabbar'
+import wepy from 'wepy'
+import tabbar from '@/components/tabbar'
 
-  export default class List extends wepy.page {
+export default class List extends wepy.page {
     config = {
-      navigationBarTitleText: 'List',
-      'usingComponents': {
-        'i-tab-bar': '../components/weapp/tab-bar/index',
-        'i-tab-bar-item': '../components/weapp/tab-bar-item/index'
-      }
-    }
+        navigationBarTitleText: 'List',
+        usingComponents: {
+            'i-tab-bar': '../components/weapp/tab-bar/index',
+            'i-tab-bar-item': '../components/weapp/tab-bar-item/index'
+        }
+    };
     components = {
-      tabbar
+        tabbar
     }
     onLoad(option) {
-      console.log('onLoad')
+        console.log('onLoad')
     }
     onShow() {
-      console.log('onShow')
+        console.log('onShow')
     }
     onReady() {
-      console.log('onReady')
+        console.log('onReady')
     }
     onHide() {
-      console.log('onHide')
+        console.log('onHide')
     }
     onUnload() {
-      console.log('onUnload')
+        console.log('onUnload')
     }
-  }
+}
 </script>

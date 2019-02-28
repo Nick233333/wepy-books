@@ -1,63 +1,63 @@
 <template>
-  <view>
-    <text>index-{{ name }}</text>
-    <button bindtap="aa">点击</button>
-    <image style="width: 30px;height: 30px;" src="../images/logo.png"></image>
-    <tabbar></tabbar>
-  </view>
+    <view>
+        <text>index-{{ name }}</text>
+        <button bindtap="aa">点击</button>
+        <image style="width: 30px;height: 30px;" src="../images/logo.png"></image>
+        <tabbar></tabbar>
+    </view>
 </template>
 
 <script>
-  import wepy from 'wepy'
-  import tabbar from '@/components/tabbar'
+import wepy from 'wepy'
+import tabbar from '@/components/tabbar'
 
-  export default class Index extends wepy.page {
+export default class Index extends wepy.page {
     config = {
-      navigationBarTitleText: 'Index',
-      'usingComponents': {
-        'i-tab-bar': '../components/weapp/tab-bar/index',
-        'i-tab-bar-item': '../components/weapp/tab-bar-item/index'
-      }
+        navigationBarTitleText: 'Index',
+        'usingComponents': {
+            'i-tab-bar': '../components/weapp/tab-bar/index',
+            'i-tab-bar-item': '../components/weapp/tab-bar-item/index'
+        }
     }
     components = {
-      tabbar
+        tabbar
     }
     methods = {
-      aa() {
-        this.name = 'new'
-        this.$apply()
-        console.log(this.data.name)
-      }
+        aa() {
+            this.name = 'new'
+            this.$apply()
+            console.log(this.data.name)
+        }
     }
     demo() {
-      console.log('demo')
+        console.log('demo')
     }
     data = {
-      name: 'nick'
+        name: 'nick'
     }
     onLoad(option) {
-      console.log(option)
-      wepy.setStorageSync('userInfo', 'nick')
-      let userInfo = wepy.getStorageSync('userInfo')
-      console.log(userInfo)
-      // wepy.clearStorageSync('userInfo')
-      console.log('onLoad')
-      console.log(wepy.getStorageInfoSync('userInfo'))
+        console.log(option)
+        wepy.setStorageSync('userInfo', 'nick')
+        let userInfo = wepy.getStorageSync('userInfo')
+        console.log(userInfo)
+        // wepy.clearStorageSync('userInfo')
+        console.log('onLoad')
+        console.log(wepy.getStorageInfoSync('userInfo'))
     }
     onShow() {
-      console.log('onShow')
-      this.demo()
+        console.log('onShow')
+        this.demo()
     }
     onReady() {
-      this.data.name = 'abc'
-      console.log(this.data.name)
-      console.log('onReady')
+        this.data.name = 'abc'
+        console.log(this.data.name)
+        console.log('onReady')
     }
     onHide() {
-      console.log('onHide')
+        console.log('onHide')
     }
     onUnload() {
-      console.log('onUnload')
+        console.log('onUnload')
     }
   }
 </script>

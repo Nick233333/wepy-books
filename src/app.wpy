@@ -7,17 +7,17 @@ import wepy from 'wepy'
 import 'wepy-async-function'
 
 export default class extends wepy.app {
-  config = {
-    pages: [
-      'pages/index',
-      'pages/list'
-    ],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#76daff',
-      navigationBarTitleText: 'Books',
-      navigationBarTextStyle: 'white'
+    config = {
+        pages: [
+            'pages/index',
+            'pages/list'
+        ],
+        window: {
+            backgroundTextStyle: 'light',
+            navigationBarBackgroundColor: '#76daff',
+            navigationBarTitleText: 'Books',
+            navigationBarTextStyle: 'white'
+        }
     }
-  }
 }
 </script>
