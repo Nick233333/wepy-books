@@ -1,6 +1,5 @@
 <template>
     <view>
-        <text>list</text>
         <tabbar></tabbar>
     </view>
 </template>
@@ -11,29 +10,14 @@ import tabbar from '@/components/tabbar'
 
 export default class List extends wepy.page {
     config = {
-        navigationBarTitleText: 'List',
+        navigationBarTitleText: '列表',
         usingComponents: {
             'i-tab-bar': '../components/weapp/tab-bar/index',
             'i-tab-bar-item': '../components/weapp/tab-bar-item/index'
         }
-    };
+    }
     components = {
         tabbar
-    }
-    onLoad(option) {
-        console.log('onLoad')
-    }
-    onShow() {
-        console.log('onShow')
-    }
-    onReady() {
-        console.log('onReady')
-    }
-    onHide() {
-        console.log('onHide')
-    }
-    onUnload() {
-        console.log('onUnload')
     }
 }
 </script>
