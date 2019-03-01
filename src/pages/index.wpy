@@ -1,7 +1,7 @@
 <template>
     <view>
         <i-cell-group i-class="title">
-            <i-cell title="架构" value="更多" is-link url="/pages/list"></i-cell>
+            <i-cell title="架构" value="更多" is-link url="/pages/lis"></i-cell>
         </i-cell-group>
         <i-row i-class="box">
             <i-col span="12" i-class="box-l">
