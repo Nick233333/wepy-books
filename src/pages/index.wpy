@@ -1,7 +1,15 @@
 <template>
     <view>
         <weswiper :option="swiper">
-            <view class="we-slide">slide 1</view>
+            <view class="we-slide">
+                <image mode="widthFix" src="../images/ucloud.jpeg"></image>
+            </view>
+            <view class="we-slide">
+                <image mode="widthFix" src="../images/ucloud.jpeg"></image>
+            </view>
+            <view class="we-slide">
+                <image mode="widthFix" src="../images/ucloud.jpeg"></image>
+            </view>
             <view class="we-slide">slide 2</view>
             <view class="we-slide">slide 3</view>
         </weswiper>
@@ -26,6 +34,11 @@
             <i-col span="12" i-class="box-r">
                 <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/codeb8d043dc8ac03893.jpg"></image>
                 <text class="text">亿级流量网站架构核心技术</text>
+            </i-col>
+        </i-row>
+        <i-row>
+            <i-col span="24" i-class="t-center">
+                <image class="banner" mode="widthFix" src="../images/ucloud.jpeg"></image>
             </i-col>
         </i-row>
         <i-cell-group i-class="title">
@@ -76,16 +89,13 @@
         justify-content: center;
         color: #fff;
         font-size: 2rem;
-        height: 120px;
+        height: 80px;
     }
-    .we-slide:nth-child(1){
-        background-color: #4390EE
+    .banner {
+        width: 98%;
     }
-    .we-slide:nth-child(2){
-        background-color: #CA4040
-    }
-    .we-slide:nth-child(3){
-        background-color: #FF8604
+    .t-center {
+        text-align: center;
     }
 </style>
 
