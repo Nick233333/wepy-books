@@ -1,5 +1,10 @@
 <template>
     <view>
+        <weswiper :option="swiper">
+            <view class="we-slide">slide 1</view>
+            <view class="we-slide">slide 2</view>
+            <view class="we-slide">slide 3</view>
+        </weswiper>
         <i-cell-group i-class="title">
             <i-cell title="架构" value="更多" is-link url="/pages/lis"></i-cell>
         </i-cell-group>
@@ -64,9 +69,30 @@
     </view>
 </template>
 
+<style lang="scss">
+    .we-slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 2rem;
+        height: 120px;
+    }
+    .we-slide:nth-child(1){
+        background-color: #4390EE
+    }
+    .we-slide:nth-child(2){
+        background-color: #CA4040
+    }
+    .we-slide:nth-child(3){
+        background-color: #FF8604
+    }
+</style>
+
 <script>
 import wepy from 'wepy'
 import tabbar from '@/components/tabbar'
+import weswiper from 'wepy-com-swiper'
 
 export default class Index extends wepy.page {
     config = {
@@ -82,7 +108,15 @@ export default class Index extends wepy.page {
         }
     }
     components = {
-        tabbar
+        tabbar,
+        weswiper
+    }
+    data = {
+        swiper: {
+            direction: 'horizontal',
+            slideLength: 3,
+            autoplay: 5000
+        }
     }
   }
 </script>
