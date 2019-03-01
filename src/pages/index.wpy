@@ -2,16 +2,17 @@
     <view>
         <weswiper :option="swiper">
             <view class="we-slide">
-                <image mode="widthFix" src="../images/ucloud.jpeg"></image>
+                <image mode="widthFix" src="../images/banner-2.png"></image>
             </view>
             <view class="we-slide">
-                <image mode="widthFix" src="../images/ucloud.jpeg"></image>
+                <image mode="widthFix" src="../images/banner-1.png"></image>
             </view>
             <view class="we-slide">
-                <image mode="widthFix" src="../images/ucloud.jpeg"></image>
+                <image mode="widthFix" src="../images/banner-3.png"></image>
             </view>
-            <view class="we-slide">slide 2</view>
-            <view class="we-slide">slide 3</view>
+            <view class="we-slide">
+                <image mode="widthFix" src="../images/banner-4.png"></image>
+            </view>
         </weswiper>
         <i-cell-group i-class="title border-b">
             <i-cell title="程序生涯" is-link url="/pages/list"></i-cell>
@@ -167,7 +168,7 @@
         justify-content: center;
         color: #fff;
         font-size: 2rem;
-        height: 80px;
+        height: 118px;
     }
     .banner {
         width: 98%;
@@ -203,9 +204,9 @@ export default class Index extends wepy.page {
     data = {
         swiper: {
             direction: 'horizontal',
-            slideLength: 3,
-            autoplay: 5000,
-            speed: 300
+            slideLength: 4,
+            autoplay: 6000,
+            speed: 500
         }
     }
     methods = {
