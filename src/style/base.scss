@@ -1,3 +1,4 @@
+$text-color: #80848f;
 page {
     background: #f0f2f5;
 }
@@ -5,16 +6,19 @@ page {
     text-align: center;
     background: #fff;
     padding-bottom: .5rem;
-    margin-bottom: .3rem;
+    margin-bottom: .4rem;
 }
 .text {
-    color: #80848f;
-    font-size: 14px;
+    display: block;
+    margin-bottom: 20rpx;
+    color: $text-color;
+    font-size: 30rpx !important;
 }
 .title {
     color: #495060;
+}
+.border-b {
     border-bottom: 1px solid #e9eaec;
-    font-size: 2rem !important;
 }
 .footer-tip {
     padding-bottom: 2rem;

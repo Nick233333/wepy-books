@@ -1,8 +1,5 @@
 <template>
     <view>
-        <i-cell-group i-class="title">
-            <i-cell title="架构" value="更多" is-link url="/pages/list"></i-cell>
-        </i-cell-group>
         <i-row i-class="box">
             <i-col span="12" i-class="box-l">
                 <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/cleancode593a4357N46699934.jpg"></image>
@@ -40,9 +37,7 @@ export default class List extends wepy.page {
             'i-tab-bar-item': '../components/weapp/tab-bar-item/index',
             'i-row': '../components/weapp/row/index',
             'i-col': '../components/weapp/col/index',
-            'i-load-more': '../components/weapp/load-more/index',
-            'i-cell-group': '../components/weapp/cell-group/index',
-            'i-cell': '../components/weapp/cell/index'
+            'i-load-more': '../components/weapp/load-more/index'
         }
     }
     components = {

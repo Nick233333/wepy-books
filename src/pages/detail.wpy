@@ -1,0 +1,42 @@
+<template>
+    <view>
+        <i-row i-class="box">
+            <i-col span="24">
+                <image style="width: 70%" mode="widthFix" src="http://img.hellocode.name//books/soft5bc1c99aN7640f99b.jpg"></image>
+            </i-col>
+        </i-row>
+        <i-cell-group i-class="title">
+            <i-cell title="《{{ name }}》" label="{{ auth }}"></i-cell>
+        </i-cell-group>
+         <i-cell-group>
+            <i-cell i-class="text">
+                {{ descrition }}
+            </i-cell>
+        </i-cell-group>
+    </view>
+</template>
+
+<style>
+
+</style>
+
+<script>
+import wepy from 'wepy'
+
+export default class Detail extends wepy.page {
+    config = {
+        navigationBarTitleText: '详情',
+        'usingComponents': {
+            'i-row': '../components/weapp/row/index',
+            'i-col': '../components/weapp/col/index',
+            'i-cell-group': '../components/weapp/cell-group/index',
+            'i-cell': '../components/weapp/cell/index'
+        }
+    }
+    data = {
+        name: '软件随想录',
+        auth: '（美）斯伯尔斯基',
+        descrition: '《软件随想录 卷2》是一部关于软件技术、人才、创业和企业管理的随想文集，作者Joel Spolsky以诙谐幽默的笔触将自己在软件行业的亲身感悟娓娓道来，观点新颖独特，内容简洁实用。全书分为36讲，每一讲都是一个独立的专题，分别介绍了作者在人员管理、程序员成长规划、软件设计细节、具体的项目管理、如何编程以及如何创办和经营软件公司等方面的独到见解。《软件随想录 卷2》从不同侧面满足了软件开发人员、设计人员、管理人员及从事软件相关工作的人员的学习与工作需要。'
+    }
+}
+</script>
