@@ -14,12 +14,15 @@ export default class TabBar extends wepy.component {
     }
     methods = {
         handleChange ({ detail }) {
-            this.active = detail.key
-            this.$apply()
+            wepy.setStorageSync('active', detail.key)
             wepy.navigateTo({
                 url: `${detail.key}`
             })
         }
+    }
+    onLoad() {
+        this.active = wepy.getStorageSync('active')
+        this.$apply()
     }
 }
 </script>

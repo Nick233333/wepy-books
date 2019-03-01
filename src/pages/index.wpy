@@ -115,7 +115,8 @@ export default class Index extends wepy.page {
         swiper: {
             direction: 'horizontal',
             slideLength: 3,
-            autoplay: 5000
+            autoplay: 5000,
+            speed: 300
         }
     }
   }
