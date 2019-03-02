@@ -25,7 +25,6 @@
             <i-col span="24">
                 <video style="width: 100%; height: 500rpx;"
                 src="http://img.hellocode.name/linus.mp4"
-                autoplay
                 danmu-list="{{ danmuList }}"
                 enable-danmu
                 danmu-btn
@@ -74,18 +73,21 @@ export default class Other extends wepy.page {
     }
     handleChange({ detail }) {
         this.current = detail.key
-        if (detail.key === 'location') {
-            let $this = this
-            wx.getLocation({
-                type: 'gcj02',
-                success(res) {
-                    $this.latitude = res.latitude
-                    $this.longitude = res.longitude
-                    $this.$apply()
-                }
-            })
-        }
         this.$apply()
+        if (detail.key === 'location') {
+            this.locationSetting()
+        }
+    }
+    locationSetting() {
+        let $this = this
+        wx.getLocation({
+            type: 'gcj02',
+            success(res) {
+                $this.latitude = res.latitude
+                $this.longitude = res.longitude
+                $this.$apply()
+            }
+        })
     }
 }
 </script>
