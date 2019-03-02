@@ -1,17 +1,17 @@
 <template>
     <view>
-        <weswiper :option="swiper">
+        <weswiper :option="swiper" class="swiper">
             <view class="we-slide">
-                <image mode="widthFix" src="../images/banner-2.png"></image>
+                <image mode="widthFix" src="http://img.hellocode.name/banner-1.png"></image>
             </view>
             <view class="we-slide">
-                <image mode="widthFix" src="../images/banner-1.png"></image>
+                <image mode="widthFix" src="http://img.hellocode.name/banner-2.png"></image>
             </view>
             <view class="we-slide">
-                <image mode="widthFix" src="../images/banner-3.png"></image>
+                <image mode="widthFix" src="http://img.hellocode.name/banner-3.png"></image>
             </view>
             <view class="we-slide">
-                <image mode="widthFix" src="../images/banner-4.png"></image>
+                <image mode="widthFix" src="http://img.hellocode.name/banner-4.png"></image>
             </view>
         </weswiper>
         <wux-skeleton active wx:if="{{ isShow }}">
@@ -71,7 +71,7 @@
         </i-row>
         <i-row>
             <i-col span="24" i-class="t-center">
-                <image class="banner" mode="widthFix" src="../images/ucloud.jpeg"></image>
+                <image class="banner" mode="widthFix" src="http://img.hellocode.name/ucloud.jpeg"></image>
             </i-col>
         </i-row>
         <i-cell-group i-class="title border-b">
@@ -174,21 +174,25 @@
 </template>
 
 <style lang="scss">
-    .we-slide{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 2rem;
-        height: 118px;
-    }
-    .banner {
-        width: 98%;
-        margin-bottom: 5rpx;
-    }
-    .t-center {
-        text-align: center;
-    }
+.swiper {
+    background: #fff;
+}
+.we-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+    height: 118px;
+}
+
+.banner {
+    width: 98%;
+    margin-bottom: 5rpx;
+}
+.t-center {
+    text-align: center;
+}
 </style>
 
 <script>
