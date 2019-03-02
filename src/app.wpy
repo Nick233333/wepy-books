@@ -11,13 +11,19 @@ export default class extends wepy.app {
         pages: [
             'pages/index',
             'pages/list',
-            'pages/detail'
+            'pages/detail',
+            'pages/other'
         ],
         window: {
             backgroundTextStyle: 'light',
             navigationBarBackgroundColor: '#fedb1d',
             navigationBarTitleText: 'Books',
             navigationBarTextStyle: 'black'
+        },
+        'permission': {
+            'scope.userLocation': {
+                'desc': '你的位置信息将用于小程序位置接口的效果展示'
+            }
         }
     }
 }

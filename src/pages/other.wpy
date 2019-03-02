@@ -1,0 +1,91 @@
+<template>
+    <view>
+        <i-tabs color="#fedb1d" current="{{ current }}" @change="handleChange">
+            <i-tab key="audio" title="音频"></i-tab>
+            <i-tab key="location" title="位置"></i-tab>
+            <i-tab key="video" title="视频"></i-tab>
+        </i-tabs>
+        <i-row wx:if="{{ current === 'audio' }}">
+            <i-col span="24">
+                2
+            </i-col>
+        </i-row>
+        <i-row wx:if="{{ current === 'location' }}">
+            <i-col span="24">
+                <map longitude="{{ longitude }}"
+                    latitude="{{ latitude }}"
+                    show-location
+                    show-compass
+                    scale="15"
+                    style="width: 100%; height: 1000rpx;"
+                    ></map>
+            </i-col>
+        </i-row>
+        <i-row wx:if="{{ current === 'video' }}">
+            <i-col span="24">
+                <video style="width: 100%; height: 500rpx;"
+                src="http://img.hellocode.name/linus.mp4"
+                autoplay
+                danmu-list="{{ danmuList }}"
+                enable-danmu
+                danmu-btn
+                controls
+                title="The mind behind Linux | Linus Torvalds"
+                ></video>
+            </i-col>
+        </i-row>
+        <tabbar></tabbar>
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import tabbar from '@/components/tabbar'
+
+export default class Other extends wepy.page {
+    config = {
+        navigationBarTitleText: '其他',
+        'usingComponents': {
+            'i-tab-bar': '../components/weapp/tab-bar/index',
+            'i-tab-bar-item': '../components/weapp/tab-bar-item/index',
+            'i-row': '../components/weapp/row/index',
+            'i-col': '../components/weapp/col/index',
+            'i-tabs': '../components/weapp/tabs/index',
+            'i-tab': '../components/weapp/tab/index'
+        }
+    }
+    components = {
+        tabbar
+    }
+    data = {
+        current: 'audio',
+        latitude: '23.099994',
+        longitude: '113.324520',
+        danmuList: [
+            { text: '666', color: '#bbbec4', time: 78 },
+            { text: '传说中的 Linus 👀👀', color: '#5FB878', time: 15 },
+            { text: '👽linus', color: '#19be6b', time: 120 },
+            { text: '???😸', color: '#01AAED', time: 56 },
+            { text: 'haker😂😂😂', color: '#5FB878', time: 45 },
+            { text: 'hahaha', color: '#5FB878', time: 42 },
+            { text: '😂😂😂', color: '#19be6b', time: 48 },
+            { text: '😸💀', color: '#2F4056', time: 89 }
+        ]
+    }
+    handleChange({ detail }) {
+        this.current = detail.key
+        if (detail.key === 'location') {
+            let $this = this
+            wx.getLocation({
+                type: 'gcj02',
+                success(res) {
+                    $this.latitude = res.latitude
+                    $this.longitude = res.longitude
+                    $this.$apply()
+                }
+            })
+        }
+        this.$apply()
+    }
+}
+</script>
