@@ -66,7 +66,7 @@ export default class Other extends wepy.page {
             { text: '传说中的 Linus 👀👀', color: '#5FB878', time: 15 },
             { text: '👽linus', color: '#19be6b', time: 120 },
             { text: '???😸', color: '#01AAED', time: 56 },
-            { text: 'haker😂😂😂', color: '#5FB878', time: 45 },
+            { text: 'hacker😂😂😂', color: '#5FB878', time: 45 },
             { text: 'hahaha', color: '#5FB878', time: 42 },
             { text: '😂😂😂', color: '#19be6b', time: 48 },
             { text: '😸💀', color: '#2F4056', time: 89 }
