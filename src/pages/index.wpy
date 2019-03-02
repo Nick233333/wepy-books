@@ -241,5 +241,8 @@ export default class Index extends wepy.page {
             this.$apply()
         }, 2000)
     }
+    onShareAppMessage(res) {
+        return { title: 'Nick 的小天地' }
+    }
   }
 </script>
