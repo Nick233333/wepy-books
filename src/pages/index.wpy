@@ -14,7 +14,19 @@
                 <image mode="widthFix" src="../images/banner-4.png"></image>
             </view>
         </weswiper>
-        <i-cell-group i-class="title border-b">
+        <wux-skeleton active wx:if="{{ isShow }}">
+            <wux-skeleton-paragraph rounded rows="4" ></wux-skeleton-paragraph>
+        </wux-skeleton>
+        <wux-skeleton active wx:if="{{ isShow }}">
+            <wux-skeleton-paragraph rounded rows="4" ></wux-skeleton-paragraph>
+        </wux-skeleton>
+        <wux-skeleton active wx:if="{{ isShow }}">
+            <wux-skeleton-paragraph rounded rows="4" ></wux-skeleton-paragraph>
+        </wux-skeleton>
+        <wux-skeleton active wx:if="{{ isShow }}">
+            <wux-skeleton-paragraph rounded rows="4" ></wux-skeleton-paragraph>
+        </wux-skeleton>
+        <i-cell-group i-class="title border-b i-c">
             <i-cell title="程序生涯" is-link url="/pages/list"></i-cell>
         </i-cell-group>
         <i-row i-class="box">
@@ -194,7 +206,9 @@ export default class Index extends wepy.page {
             'i-col': '../components/weapp/col/index',
             'i-load-more': '../components/weapp/load-more/index',
             'i-cell-group': '../components/weapp/cell-group/index',
-            'i-cell': '../components/weapp/cell/index'
+            'i-cell': '../components/weapp/cell/index',
+            'wux-skeleton': '../components/wux-weapp/skeleton/index',
+            'wux-skeleton-paragraph': '../components/wux-weapp/skeleton-paragraph/index'
         }
     }
     components = {
@@ -202,6 +216,7 @@ export default class Index extends wepy.page {
         weswiper
     }
     data = {
+        isShow: true,
         swiper: {
             direction: 'horizontal',
             slideLength: 4,
@@ -215,6 +230,12 @@ export default class Index extends wepy.page {
                 url: 'detail'
             })
         }
+    }
+    onShow() {
+        setTimeout(() => {
+            this.isShow = false
+            this.$apply()
+        }, 2000)
     }
   }
 </script>
