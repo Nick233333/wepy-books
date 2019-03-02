@@ -7,7 +7,7 @@
         </i-tabs>
         <i-row wx:if="{{ current === 'audio' }}">
             <i-col span="24">
-                2
+                <image @tap="playAudio" mode="widthFix" height="180" src="http://img.hellocode.name/video-banner.png"></image>
             </i-col>
         </i-row>
         <i-row wx:if="{{ current === 'location' }}">
@@ -57,6 +57,8 @@ export default class Other extends wepy.page {
         tabbar
     }
     data = {
+        innerAudioContext: null,
+        isAudioPlay: false,
         current: 'audio',
         latitude: '23.099994',
         longitude: '113.324520',
@@ -71,8 +73,25 @@ export default class Other extends wepy.page {
             { text: '😸💀', color: '#2F4056', time: 89 }
         ]
     }
+    playAudio() {
+        if (this.innerAudioContext === null) {
+            this.innerAudioContext = wx.createInnerAudioContext()
+            this.innerAudioContext.src = 'http://img.hellocode.name/about.mp3'
+            this.innerAudioContext.autoplay = true
+        }
+        if (this.innerAudioContext.isAudioPlay) {
+            this.innerAudioContext.pause()
+            this.innerAudioContext.isAudioPlay = false
+        } else {
+            this.innerAudioContext.play()
+            this.innerAudioContext.isAudioPlay = true
+        }
+        this.$apply()
+    }
     handleChange({ detail }) {
         this.current = detail.key
+        this.innerAudioContext.pause()
+        this.innerAudioContext.isAudioPlay = false
         this.$apply()
         if (detail.key === 'location') {
             this.locationSetting()
