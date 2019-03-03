@@ -177,7 +177,7 @@
 .swiper {
     background: #fff;
 }
-.we-slide{
+.we-slide {
     display: flex;
     align-items: center;
     justify-content: center;

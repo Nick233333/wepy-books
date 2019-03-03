@@ -124,13 +124,16 @@ export default class Other extends wepy.page {
             this.innerAudioContext.src = 'http://img.hellocode.name/about.mp3'
             this.innerAudioContext.autoplay = true
         }
-        if (this.innerAudioContext.isAudioPlay) {
+        if (this.innerAudioContext.isAudioPlay && this.innerAudioContext !== null) {
             this.innerAudioContext.pause()
             this.innerAudioContext.isAudioPlay = false
-            this.audioIcon = 'suspend'
         } else {
             this.innerAudioContext.play()
             this.innerAudioContext.isAudioPlay = true
+        }
+        if (this.audioIcon === 'playon') {
+            this.audioIcon = 'suspend'
+        } else {
             this.audioIcon = 'playon'
         }
         this.$apply()
@@ -140,7 +143,11 @@ export default class Other extends wepy.page {
         if (this.innerAudioContext !== null) {
             this.innerAudioContext.pause()
             this.innerAudioContext.isAudioPlay = false
-            this.audioIcon = 'suspend'
+            if (this.audioIcon === 'playon') {
+                this.audioIcon = 'suspend'
+            } else {
+                this.audioIcon = 'playon'
+            }
         }
         if (detail.key === 'location') {
             this.locationSetting()
