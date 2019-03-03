@@ -185,7 +185,6 @@
     font-size: 2rem;
     height: 118px;
 }
-
 .banner {
     width: 98%;
     margin-bottom: 5rpx;

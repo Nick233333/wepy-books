@@ -6,8 +6,26 @@
             <i-tab key="video" title="视频"></i-tab>
         </i-tabs>
         <i-row wx:if="{{ current === 'audio' }}">
-            <i-col span="24">
-                <image @tap="playAudio" mode="widthFix" height="180" src="http://img.hellocode.name/video-banner.png"></image>
+            <i-col span="24" i-class="collapse-box">
+                <i-collapse name="description" accordion>
+                    <i-collapse-item i-class="collapse-title" name="description" title="音频简介:《未来世界的幸存者》-- 阮一峰">
+                        <view class="collapse-main" slot="content">
+                            <text class="text">机器人、自动化、人工智能正变得比人类更强大</text>
+                            <text class="text">技术变革导致人类社会重构</text>
+                            <text class="text">在可预见的未来，技术终将淘汰人类</text>
+                            <text class="text">世界正剧烈变化，我们该何去何从</text>
+                            <text class="text">未来的世界会很糟糕，主要表现在三个方面：</text>
+                            <text class="text">1. 技术的快速发展，使得大部分劳动者都没用了。</text>
+                            <text class="text">2. 大部分人必定只能找到低端工作，工资仅够温饱。</text>
+                            <text class="text">3. 贫富分化将越来越严重，而且会世袭，穷人毫无翻身的可能。</text>
+                            <text class="text">我觉得，这件事情很重要，也许是最重要的事情，但是看到的人却不多。所以，我写了一系列文章，讲述我的观点，编成了一本书就叫做《未来世界的幸存者》。为什么会有上面的结论，我都写在这本书里了，这里就不具体展开了。</text>
+                            <text class="text">在我看来，大趋势都已经确立了，无法改变了，未来二三十年里面就能看见结果。我们必须赶在结局到来之前，做些什么。</text>
+                            <text class="text">但是，我现在还不知道，到底能做什么。只有先把想法传播出去，一方面可以提醒其他人，另一方面也许可以找到一些志同道合的朋友。我一个人能做的有限，如果一群人，也许真的能创造一些改变。</text>
+                            <text class="text">如果未来如预测的那样，极少数有技术的富人控制一切，大多数人沦为毫无价值的无用阶层，那么现在就要寻找出路。</text>
+                        </view>
+                    </i-collapse-item>
+                </i-collapse>
+                <i-icon i-class="audio-btn" size="50" color="#fedb1d" type="{{ audioIcon }}" @tap="playAudio" />
             </i-col>
         </i-row>
         <i-row wx:if="{{ current === 'location' }}">
@@ -37,6 +55,27 @@
     </view>
 </template>
 
+<style>
+.collapse-box {
+    background: #fff;
+}
+.collapse-title {
+    font-size: 34rpx;
+    color: #495060;
+}
+.collapse-main {
+    font-size: 30rpx;
+    color: #80848f;
+}
+.text{
+    display: block;
+}
+.audio-btn {
+    margin-bottom: 100px;
+    margin-left: 43%;
+}
+</style>
+
 <script>
 import wepy from 'wepy'
 import tabbar from '@/components/tabbar'
@@ -50,13 +89,19 @@ export default class Other extends wepy.page {
             'i-row': '../components/weapp/row/index',
             'i-col': '../components/weapp/col/index',
             'i-tabs': '../components/weapp/tabs/index',
-            'i-tab': '../components/weapp/tab/index'
+            'i-tab': '../components/weapp/tab/index',
+            'i-collapse': '../components/weapp/collapse/index',
+            'i-collapse-item': '../components/weapp/collapse-item/index',
+            'i-cell-group': '../components/weapp/cell-group/index',
+            'i-cell': '../components/weapp/cell/index',
+            'i-icon': '../components/weapp/icon/index'
         }
     }
     components = {
         tabbar
     }
     data = {
+        audioIcon: 'playon',
         innerAudioContext: null,
         isAudioPlay: false,
         current: 'audio',
@@ -82,20 +127,25 @@ export default class Other extends wepy.page {
         if (this.innerAudioContext.isAudioPlay) {
             this.innerAudioContext.pause()
             this.innerAudioContext.isAudioPlay = false
+            this.audioIcon = 'suspend'
         } else {
             this.innerAudioContext.play()
             this.innerAudioContext.isAudioPlay = true
+            this.audioIcon = 'playon'
         }
         this.$apply()
     }
     handleChange({ detail }) {
         this.current = detail.key
-        this.innerAudioContext.pause()
-        this.innerAudioContext.isAudioPlay = false
-        this.$apply()
+        if (this.innerAudioContext !== null) {
+            this.innerAudioContext.pause()
+            this.innerAudioContext.isAudioPlay = false
+            this.audioIcon = 'suspend'
+        }
         if (detail.key === 'location') {
             this.locationSetting()
         }
+        this.$apply()
     }
     locationSetting() {
         let $this = this
