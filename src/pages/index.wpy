@@ -183,11 +183,10 @@
     justify-content: center;
     color: #fff;
     font-size: 2rem;
-    height: 118px;
+    height: 275rpx;
 }
-.we-slide image {
+.we-slide > image {
     width: 100%;
-    height: 365px;
 }
 .banner {
     width: 98%;
