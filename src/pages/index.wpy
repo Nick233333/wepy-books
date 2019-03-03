@@ -15,16 +15,10 @@
             </view>
         </weswiper>
         <wux-skeleton active wx:if="{{ isShow }}">
-            <wux-skeleton-paragraph rounded rows="4" ></wux-skeleton-paragraph>
+            <wux-skeleton-paragraph rounded rows="12" ></wux-skeleton-paragraph>
         </wux-skeleton>
         <wux-skeleton active wx:if="{{ isShow }}">
-            <wux-skeleton-paragraph rounded rows="4" ></wux-skeleton-paragraph>
-        </wux-skeleton>
-        <wux-skeleton active wx:if="{{ isShow }}">
-            <wux-skeleton-paragraph rounded rows="4" ></wux-skeleton-paragraph>
-        </wux-skeleton>
-        <wux-skeleton active wx:if="{{ isShow }}">
-            <wux-skeleton-paragraph rounded rows="4" ></wux-skeleton-paragraph>
+            <wux-skeleton-paragraph rounded rows="12" ></wux-skeleton-paragraph>
         </wux-skeleton>
         <i-cell-group i-class="title border-b i-c">
             <i-cell title="程序生涯" is-link url="/pages/list"></i-cell>
