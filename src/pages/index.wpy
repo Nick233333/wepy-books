@@ -203,13 +203,13 @@ export default class Index extends wepy.page {
     config = {
         navigationBarTitleText: '首页',
         'usingComponents': {
-            'i-tab-bar': '../components/weapp/tab-bar/index',
-            'i-tab-bar-item': '../components/weapp/tab-bar-item/index',
-            'i-row': '../components/weapp/row/index',
-            'i-col': '../components/weapp/col/index',
-            'i-load-more': '../components/weapp/load-more/index',
-            'i-cell-group': '../components/weapp/cell-group/index',
-            'i-cell': '../components/weapp/cell/index',
+            'i-tab-bar': '../components/iview-weapp/tab-bar/index',
+            'i-tab-bar-item': '../components/iview-weapp/tab-bar-item/index',
+            'i-row': '../components/iview-weapp/row/index',
+            'i-col': '../components/iview-weapp/col/index',
+            'i-load-more': '../components/iview-weapp/load-more/index',
+            'i-cell-group': '../components/iview-weapp/cell-group/index',
+            'i-cell': '../components/iview-weapp/cell/index',
             'wux-skeleton': '../components/wux-weapp/skeleton/index',
             'wux-skeleton-paragraph': '../components/wux-weapp/skeleton-paragraph/index'
         }

@@ -33,11 +33,11 @@ export default class List extends wepy.page {
     config = {
         navigationBarTitleText: '列表',
         usingComponents: {
-            'i-tab-bar': '../components/weapp/tab-bar/index',
-            'i-tab-bar-item': '../components/weapp/tab-bar-item/index',
-            'i-row': '../components/weapp/row/index',
-            'i-col': '../components/weapp/col/index',
-            'i-load-more': '../components/weapp/load-more/index'
+            'i-tab-bar': '../components/iview-weapp/tab-bar/index',
+            'i-tab-bar-item': '../components/iview-weapp/tab-bar-item/index',
+            'i-row': '../components/iview-weapp/row/index',
+            'i-col': '../components/iview-weapp/col/index',
+            'i-load-more': '../components/iview-weapp/load-more/index'
         }
     }
     components = {

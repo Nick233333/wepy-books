@@ -27,10 +27,10 @@ export default class Detail extends wepy.page {
     config = {
         navigationBarTitleText: '详情',
         'usingComponents': {
-            'i-row': '../components/weapp/row/index',
-            'i-col': '../components/weapp/col/index',
-            'i-cell-group': '../components/weapp/cell-group/index',
-            'i-cell': '../components/weapp/cell/index'
+            'i-row': '../components/iview-weapp/row/index',
+            'i-col': '../components/iview-weapp/col/index',
+            'i-cell-group': '../components/iview-weapp/cell-group/index',
+            'i-cell': '../components/iview-weapp/cell/index'
         }
     }
     data = {
