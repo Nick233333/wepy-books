@@ -24,6 +24,22 @@ export default class extends wepy.app {
             'scope.userLocation': {
                 'desc': '请允许小程序获取您的位置'
             }
+        },
+        tabBar: {
+            list: [{
+                pagePath: 'pages/index',
+                text: '首页',
+                iconPath: 'images/homepage.png',
+                selectedIconPath: 'images/homepage_fill.png'
+            }, {
+                pagePath: 'pages/other',
+                text: '其他',
+                iconPath: 'images/like.png',
+                selectedIconPath: 'images/like_fill.png'
+            }],
+            color: '#80848f',
+            selectedColor: '#fedb1d',
+            backgroundColor: '#fff'
         }
     }
 }

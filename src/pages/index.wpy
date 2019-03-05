@@ -163,7 +163,6 @@
             </i-col>
         </i-row>
         <i-load-more i-class="footer-tip" tip="已经到底了" loading="{{ false }}" />
-        <tabbar></tabbar>
     </view>
 </template>
 
@@ -193,15 +192,12 @@
 
 <script>
 import wepy from 'wepy'
-import tabbar from '@/components/tabbar'
 import weswiper from 'wepy-com-swiper'
 
 export default class Index extends wepy.page {
     config = {
         navigationBarTitleText: '首页',
         'usingComponents': {
-            'i-tab-bar': '../components/iview-weapp/tab-bar/index',
-            'i-tab-bar-item': '../components/iview-weapp/tab-bar-item/index',
             'i-row': '../components/iview-weapp/row/index',
             'i-col': '../components/iview-weapp/col/index',
             'i-load-more': '../components/iview-weapp/load-more/index',
@@ -212,7 +208,6 @@ export default class Index extends wepy.page {
         }
     }
     components = {
-        tabbar,
         weswiper
     }
     data = {

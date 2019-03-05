@@ -16,10 +16,6 @@
     </view>
 </template>
 
-<style>
-
-</style>
-
 <script>
 import wepy from 'wepy'
 

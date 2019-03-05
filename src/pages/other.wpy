@@ -35,7 +35,7 @@
                     show-location
                     show-compass
                     scale="15"
-                    style="width: 100%; height: 1130rpx;"
+                    style="width: 100%; height: 1500rpx;"
                     ></map>
             </i-col>
         </i-row>
@@ -51,7 +51,6 @@
                 ></video>
             </i-col>
         </i-row>
-        <tabbar></tabbar>
     </view>
 </template>
 
@@ -78,14 +77,11 @@
 
 <script>
 import wepy from 'wepy'
-import tabbar from '@/components/tabbar'
 
 export default class Other extends wepy.page {
     config = {
         navigationBarTitleText: '其他',
         'usingComponents': {
-            'i-tab-bar': '../components/iview-weapp/tab-bar/index',
-            'i-tab-bar-item': '../components/iview-weapp/tab-bar-item/index',
             'i-row': '../components/iview-weapp/row/index',
             'i-col': '../components/iview-weapp/col/index',
             'i-tabs': '../components/iview-weapp/tabs/index',
@@ -96,9 +92,6 @@ export default class Other extends wepy.page {
             'i-cell': '../components/iview-weapp/cell/index',
             'i-icon': '../components/iview-weapp/icon/index'
         }
-    }
-    components = {
-        tabbar
     }
     data = {
         audioIcon: 'playon',
