@@ -17,7 +17,7 @@
   "author": "nick <nick_php@163.com>",
   "license": "MIT",
   "dependencies": {
-    "wepy": "^1.6.0",
+    "wepy": "^1.7.2",
     "wepy-async-function": "^1.4.4",
     "wepy-com-swiper": "^1.0.1",
     "wepy-com-toast": "^1.0.2"
