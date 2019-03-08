@@ -35,8 +35,9 @@
                     show-location
                     show-compass
                     scale="15"
-                    style="width: 100%; height: 1500rpx;"
+                    style="width: 100%; height: 1300rpx;"
                     ></map>
+                    <button bindopensetting="getLocation" open-type="openSetting">打开获取位置授权设置</button>
             </i-col>
         </i-row>
         <i-row wx:if="{{ current === 'video' }}">
@@ -157,6 +158,9 @@ export default class Other extends wepy.page {
                 $this.$apply()
             }
         })
+    }
+    getLocation() {
+        this.locationSetting()
     }
 }
 </script>
