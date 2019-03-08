@@ -14,21 +14,23 @@
 
 本项目代码使用 WePY 框架 [WePY](https://github.com/Tencent/wepy) 开发
 
-### 基础安装
-
-#### 1. 克隆源代码
-
-克隆 `wepy-books` 源代码到本地：
-
-    > git clone https://github.com/Nick233333/wepy-books.git
-
-安装 `wepy` 框架
+### 全局安装 `Wepy` 框架
 
 ```
 npm install wepy-cli -g
 ```
 
-#### 2. 安装扩展包依赖
+### 项目安装
+
+#### 1. 克隆源代码
+
+克隆 `wepy-books` 源代码到本地：
+
+```
+git clone https://github.com/Nick233333/wepy-books.git
+```
+
+#### 2. 进入项目目录安装依赖
 
 ```
 npm install
