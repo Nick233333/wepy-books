@@ -4,9 +4,7 @@
 
 ## 扫码体验
 
-<center>
-    <img src="http://img.hellocode.name/wepy-books.jpg" width="200" />
-</center>
+![](http://img.hellocode.name/wepy-books.jpg)
 
 ## 运行环境要求
 
