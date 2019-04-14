@@ -1,10 +1,29 @@
-## 基于 wepy 开发的图书馆微信小程序
+<h2 align="center">
+Books天地--基于 wepy 开发的图书馆微信小程序
+</h2>
 
-- 名称：Books天地
+<p align="center">
+    <a href="http://standardjs.com/">
+        <img src="https://img.shields.io/badge/wepy-1.7-brightgreen.svg" alt="wepy" />
+    </a>
+    <a href="LICENSE">
+        <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="Software License" />
+    </a>
+    <a href="https://github.com/nick233333/wepy-books/issues">
+        <img src="https://img.shields.io/github/issues/nick233333/wepy-books.svg" alt="Issues" />
+    </a>
+    <a href="http://standardjs.com/">
+        <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="JavaScript Style Guide" />
+    </a>
+</p>
 
-## 扫码体验
+<h2 align="center">
+扫码体验
+</h2>
 
-<img src="http://img.hellocode.name/wepy-books.jpg" width="200" />
+<p align="center">
+    <img src="http://img.hellocode.name/wepy-books.jpg" width="200" />
+</p>
 
 ## 运行环境要求
 
