@@ -3,10 +3,16 @@ Books天地--基于 wepy 开发的图书馆微信小程序
 </h2>
 
 <p align="center">
-    <a href="http://standardjs.com/">
+    <a href="https://github.com/Nick233333/wepy-books/releases">
+        <img src="https://img.shields.io/badge/release-1.2.0-blue.svg" alt="JavaScrip" />
+    </a>
+    <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">
+        <img src="https://img.shields.io/badge/language-JavaScript-blue.svg" alt="Releases" />
+    </a>
+    <a href="https://tencent.github.io/wepy/">
         <img src="https://img.shields.io/badge/wepy-1.7-brightgreen.svg" alt="wepy" />
     </a>
-    <a href="LICENSE">
+    <a href="https://github.com/nick233333/wepy-books/">
         <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="Software License" />
     </a>
     <a href="https://github.com/nick233333/wepy-books/issues">
