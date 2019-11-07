@@ -20,148 +20,17 @@
         <wux-skeleton active wx:if="{{ isShow }}">
             <wux-skeleton-paragraph rounded rows="12" ></wux-skeleton-paragraph>
         </wux-skeleton>
-        <i-cell-group i-class="title border-b i-c">
-            <i-cell title="程序生涯" is-link url="/pages/list"></i-cell>
-        </i-cell-group>
-        <i-row i-class="box">
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/cleancode593a4357N46699934.jpg"></image>
-                <text class="text">代码简洁之道</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/codeb8d043dc8ac03893.jpg"></image>
-                <text class="text">代码大全</text>
-            </i-col>
-        </i-row>
-        <i-row i-class="box">
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/soft5bc1c99aN7640f99b.jpg"></image>
-                <text class="text">软件随想录</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/myth5c04d905N4364a37a.jpg"></image>
-                <text class="text">人月神话</text>
-            </i-col>
-        </i-row>
-        <i-row i-class="box">
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/clear55a8c17eNd3918c0c.jpg"></image>
-                <text class="text">重构改善既有代码的设计</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/coder594a09fbNeaf385c9.jpg"></image>
-                <text class="text">程序员修炼之道</text>
-            </i-col>
-        </i-row>
-        <i-row i-class="box">
-             <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/linus8c5e53eca8de2739.png"></image>
-                <text class="text">Just for Fun</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/haker54ddac23Nde0e51fa.jpg"></image>
-                <text class="text">黑客与画家</text>
-            </i-col>
-        </i-row>
-        <i-row>
-            <i-col span="24" i-class="t-center">
-                <image class="banner" mode="widthFix" src="http://img.hellocode.name/ucloud.jpeg"></image>
-            </i-col>
-        </i-row>
-        <i-cell-group i-class="title border-b">
-            <i-cell title="服务器与系统" is-link url="/pages/list"></i-cell>
-        </i-cell-group>
-        <i-row i-class="box">
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/linux5beb9d94N19d87979.jpg"></image>
-                <text class="text">鸟哥的Linux私房菜</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/nginx56d52c31N69ce6a5a.jpg"></image>
-                <text class="text">深入理解Nginx</text>
-            </i-col>
-        </i-row>
-        <i-cell-group i-class="title border-b">
-            <i-cell title="数据库" is-link url="/pages/list"></i-cell>
-        </i-cell-group>
-        <i-row i-class="box">
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/redis56380554N53407ba0.jpg"></image>
-                <text class="text">Redis实战</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/mysqla219052fe17f2f02.jpg"></image>
-                <text class="text">高性能MySQL</text>
-            </i-col>
-        </i-row>
-        <i-row i-class="box">
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/redis53a8dc4aNacc44a89.jpg"></image>
-                <text class="text">Redis设计与实现</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/nosql81e4d5d7e29eb637.jpg"></image>
-                <text class="text">NoSQL精髓</text>
-            </i-col>
-        </i-row>
-        <i-cell-group i-class="title border-b">
-            <i-cell title="JavaScript" is-link url="/pages/list"></i-cell>
-        </i-cell-group>
-        <i-row i-class="box">
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/js56ea5e6aN38c0f2b8.jpg"></image>
-                <text class="text">JavaScript权威指南</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/javascript592bf164N7a4187c3.jpg"></image>
-                <text class="text">JavaScript高级程序设计</text>
-            </i-col>
-        </i-row>
-        <i-row i-class="box">
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/nodejs592bf165N755a88f0.jpg"></image>
-                <text class="text">深入浅出Nodejs</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/easyjsrBEQWFE5UAMIAAAAAAIdHGYQUr8AABt2QDZKuwAAh00309.jpg"></image>
-                <text class="text">编写可以维护的JavaScript</text>
-            </i-col>
-        </i-row>
-        <i-cell-group i-class="title border-b">
-            <i-cell title="团队协作" is-link url="/pages/list"></i-cell>
-        </i-cell-group>
-        <i-row i-class="box">
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/team5bb02e1bNe5a13f48.jpg"></image>
-                <text class="text">高效团队开发工具与方法</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/taobaorBEQYFGtfcMIAAAAAAN1D8wf2VEAACseAMsyHsAA3Un160.jpg"></image>
-                <text class="text">淘宝技术这十年</text>
-            </i-col>
-        </i-row>
-        <i-cell-group i-class="title border-b">
-            <i-cell title="网络协议" is-link url="/pages/list"></i-cell>
-        </i-cell-group>
-        <i-row i-class="box">
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/http5a6ad1d3Ned0bef7c.jpg"></image>
-                <text class="text">HTTP权威指南</text>
-            </i-col>
-            <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/html53f560e4Na8646b80.jpg"></image>
-                <text class="text">HTML5权威指南</text>
-            </i-col>
-        </i-row>
-        <i-cell-group i-class="title border-b">
-            <i-cell title="架构" is-link url="/pages/list"></i-cell>
-        </i-cell-group>
-        <i-row i-class="box">
-             <i-col span="12" @tap="detail">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/architecture58cba90fN811be4b0.jpg"></image>
-                <text class="text">亿级流量网站架构核心技术</text>
-            </i-col>
-        </i-row>
+        <view wx:for="{{ categories }}" wx:for-item="category" wx:key="category_id">
+            <i-cell-group i-class="title border-b i-c">
+                <i-cell title="{{ category.category_name }}" is-link></i-cell>
+            </i-cell-group>
+            <i-row i-class="box">
+                <i-col span="12" @tap="detail" wx:for="{{ category.books }}" wx:for-item="book" wx:key="id">
+                    <image style="width: 100%" mode="widthFix" src="{{ book.pictrue }}"></image>
+                    <text class="text">{{ book.book_name }}</text>
+                </i-col>
+            </i-row>
+        </view>
         <i-load-more i-class="footer-tip" tip="已经到底了" loading="{{ false }}" />
     </view>
 </template>
@@ -193,6 +62,7 @@
 <script>
 import wepy from 'wepy'
 import weswiper from 'wepy-com-swiper'
+import api from '@/utils/api'
 
 export default class Index extends wepy.page {
     config = {
@@ -216,7 +86,8 @@ export default class Index extends wepy.page {
             direction: 'horizontal',
             slideLength: 4,
             speed: 1000
-        }
+        },
+        categories: []
     }
     methods = {
         detail() {
@@ -225,14 +96,35 @@ export default class Index extends wepy.page {
             })
         }
     }
+    async getCategories() {
+        let categories = wepy.getStorageSync('categories')
+        if (!categories) {
+            try {
+                let categoriesResponse = await api.request('/api/categorys/index')
+                if (categoriesResponse.statusCode === 200) {
+                    categories = categoriesResponse.data.data
+                    wepy.setStorageSync('categories', categories)
+                }
+            } catch (err) {
+                wepy.showModal({
+                    title: '提示',
+                    content: '服务器错误，请联系管理员'
+                })
+            }
+        }
+
+        this.categories = categories
+        this.$apply()
+    }
     onShow() {
+        this.getCategories()
         setTimeout(() => {
             this.isShow = false
             this.$apply()
         }, 2000)
     }
     onShareAppMessage(res) {
-        return { title: 'Nick 的小天地' }
+        return { title: 'Books 天地' }
     }
   }
 </script>

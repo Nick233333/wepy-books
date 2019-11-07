@@ -41,6 +41,13 @@ module.exports = {
     }
   },
   plugins: {
+    replace: {
+        filter: /\.js$/,
+        config: {
+          find: /__BASE_URL__/g,
+          replace: prod ? "'https://api.hellocode.name'" : "'http://api.hellocode.test'"
+        }
+      }
   },
   appConfig: {
     noPromiseAPI: ['createSelectorQuery']

@@ -20,7 +20,8 @@
     "wepy": "^1.7.2",
     "wepy-async-function": "^1.4.4",
     "wepy-com-swiper": "^1.0.1",
-    "wepy-com-toast": "^1.0.2"
+    "wepy-com-toast": "^1.0.2",
+    "wepy-plugin-replace": "^1.5.10"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",
