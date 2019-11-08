@@ -1,6 +1,6 @@
 import wepy from 'wepy'
 
-const host = __BASE_URL__
+const host = wepy.$appConfig.baseUrl
 
 const request = async (options, showLoading = true) => {
     if (typeof options === 'string') {

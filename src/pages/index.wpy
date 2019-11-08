@@ -22,10 +22,10 @@
         </wux-skeleton>
         <view wx:for="{{ categories }}" wx:for-item="category" wx:key="category_id">
             <i-cell-group i-class="title border-b i-c">
-                <i-cell title="{{ category.category_name }}" is-link></i-cell>
+                <i-cell title="{{ category.category_name }}" is-link @tap="category({{ category.category_id }})"></i-cell>
             </i-cell-group>
             <i-row i-class="box">
-                <i-col span="12" @tap="detail" wx:for="{{ category.books }}" wx:for-item="book" wx:key="id">
+                <i-col span="12" @tap="detail({{ book.id }})" wx:for="{{ category.books }}" wx:for-item="book" wx:key="id">
                     <image style="width: 100%" mode="widthFix" src="{{ book.pictrue }}"></image>
                     <text class="text">{{ book.book_name }}</text>
                 </i-col>
@@ -90,9 +90,14 @@ export default class Index extends wepy.page {
         categories: []
     }
     methods = {
-        detail() {
+        detail(bookId) {
             wepy.navigateTo({
-                url: 'detail'
+                url: 'detail?bookId=' + bookId
+            })
+        },
+        category(categoryId) {
+            wepy.navigateTo({
+                url: 'list?categoryId=' + categoryId
             })
         }
     }
@@ -124,7 +129,7 @@ export default class Index extends wepy.page {
         }, 2000)
     }
     onShareAppMessage(res) {
-        return { title: 'Books 天地' }
+        return { title: 'Books天地--小程序' }
     }
   }
 </script>

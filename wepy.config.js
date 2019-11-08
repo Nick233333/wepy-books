@@ -40,17 +40,10 @@ module.exports = {
       ]
     }
   },
-  plugins: {
-    replace: {
-        filter: /\.js$/,
-        config: {
-          find: /__BASE_URL__/g,
-          replace: prod ? "'https://api.hellocode.name'" : "'http://api.hellocode.test'"
-        }
-      }
-  },
+  plugins: {},
   appConfig: {
-    noPromiseAPI: ['createSelectorQuery']
+    noPromiseAPI: ['createSelectorQuery'],
+    baseUrl: process.env.NODE_ENV === 'production' ? 'https://api.hellocode.name' : 'http://api.hellocode.test'
   }
 }
 
