@@ -20,14 +20,14 @@
         <wux-skeleton active wx:if="{{ isShow }}">
             <wux-skeleton-paragraph rounded rows="12" ></wux-skeleton-paragraph>
         </wux-skeleton>
-        <view wx:for="{{ categories }}" wx:for-item="category" wx:key="category_id">
-            <i-cell-group i-class="title border-b i-c">
+        <view wx:for="{{ categorys }}" wx:for-item="category" wx:key="category_id">
+            <i-cell-group i-class="title border-b">
                 <i-cell title="{{ category.category_name }}" is-link @tap="category({{ category.category_id }})"></i-cell>
             </i-cell-group>
             <i-row i-class="box">
                 <i-col span="12" @tap="detail({{ book.id }})" wx:for="{{ category.books }}" wx:for-item="book" wx:key="id">
                     <image style="width: 100%" mode="widthFix" src="{{ book.pictrue }}"></image>
-                    <text class="text">{{ book.book_name }}</text>
+                    <text class="text p-30">{{ book.book_name }}</text>
                 </i-col>
             </i-row>
         </view>
@@ -87,7 +87,7 @@ export default class Index extends wepy.page {
             slideLength: 4,
             speed: 1000
         },
-        categories: []
+        categorys: []
     }
     methods = {
         detail(bookId) {
@@ -101,14 +101,14 @@ export default class Index extends wepy.page {
             })
         }
     }
-    async getCategories() {
-        let categories = wepy.getStorageSync('categories')
-        if (!categories) {
+    async getCategorys() {
+        let categorys = wepy.getStorageSync('categorys')
+        if (!categorys) {
             try {
-                let categoriesResponse = await api.request('/api/categorys/index')
-                if (categoriesResponse.statusCode === 200) {
-                    categories = categoriesResponse.data.data
-                    wepy.setStorageSync('categories', categories)
+                let categorysResponse = await api.request('/api/categorys/index', false)
+                if (categorysResponse.statusCode === 200) {
+                    categorys = categorysResponse.data.data
+                    wepy.setStorageSync('categorys', categorys)
                 }
             } catch (err) {
                 wepy.showModal({
@@ -117,16 +117,12 @@ export default class Index extends wepy.page {
                 })
             }
         }
-
-        this.categories = categories
+        this.isShow = false
+        this.categorys = categorys
         this.$apply()
     }
-    onShow() {
-        this.getCategories()
-        setTimeout(() => {
-            this.isShow = false
-            this.$apply()
-        }, 2000)
+    onLoad() {
+        this.getCategorys()
     }
     onShareAppMessage(res) {
         return { title: 'Books天地--小程序' }

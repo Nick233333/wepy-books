@@ -2,15 +2,18 @@
     <view>
         <i-row i-class="box">
             <i-col span="24">
-                <image style="width: 70%" mode="widthFix" src="http://img.hellocode.name//books/soft5bc1c99aN7640f99b.jpg"></image>
+                <image style="width: 70%;margin-top: 10px;" mode="widthFix" src="{{ book.pictrue }}"></image>
             </i-col>
         </i-row>
         <i-cell-group i-class="title">
-            <i-cell title="《{{ name }}》" label="{{ auth }}"></i-cell>
+            <i-cell i-class="mb-20" title="{{ book.book_name }}" label="出版社：{{ book.copyright }} 作者：{{ book.author }}"></i-cell>
         </i-cell-group>
          <i-cell-group>
-            <i-cell i-class="text">
-                {{ descrition }}
+            <i-cell i-class="text mb-20" wx:if="{{book.description}}">
+                {{ book.description }}
+            </i-cell>
+            <i-cell i-class="text mb-20" wx:if="{{book.note}}">
+                {{ book.note }}
             </i-cell>
         </i-cell-group>
     </view>
@@ -18,6 +21,7 @@
 
 <script>
 import wepy from 'wepy'
+import api from '@/utils/api'
 
 export default class Detail extends wepy.page {
     config = {
@@ -30,9 +34,29 @@ export default class Detail extends wepy.page {
         }
     }
     data = {
-        name: '软件随想录',
-        auth: '（美）斯伯尔斯基',
-        descrition: '《软件随想录 卷2》是一部关于软件技术、人才、创业和企业管理的随想文集，作者Joel Spolsky以诙谐幽默的笔触将自己在软件行业的亲身感悟娓娓道来，观点新颖独特，内容简洁实用。全书分为36讲，每一讲都是一个独立的专题，分别介绍了作者在人员管理、程序员成长规划、软件设计细节、具体的项目管理、如何编程以及如何创办和经营软件公司等方面的独到见解。《软件随想录 卷2》从不同侧面满足了软件开发人员、设计人员、管理人员及从事软件相关工作的人员的学习与工作需要。'
+        book: []
+    }
+    async getBook(bookId) {
+        let book = wepy.getStorageSync(`book-${bookId}`)
+        if (!book) {
+            try {
+                let bookRes = await api.request(`/api/books/${bookId}`)
+                if (bookRes.statusCode === 200) {
+                    book = bookRes.data.data
+                    wepy.setStorageSync(`book-${book.id}`, book)
+                }
+            } catch (err) {
+                wepy.showModal({
+                    title: '提示',
+                    content: '服务器错误，请联系管理员'
+                })
+            }
+        }
+        this.book = book
+        this.$apply()
+    }
+    onLoad(options) {
+        this.getBook(options.bookId)
     }
 }
 </script>

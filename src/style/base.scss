@@ -10,7 +10,6 @@ page {
 }
 .text {
     display: block;
-    margin-bottom: 20rpx;
     color: $text-color;
     font-size: 30rpx !important;
 }
@@ -23,5 +22,10 @@ page {
 .footer-tip {
     padding-bottom: 2rem;
 }
-
+.mb-20 {
+    margin-bottom: 20rpx;
+}
+.p-30 {
+    padding: 30rpx;
+}
 

@@ -1,23 +1,9 @@
 <template>
     <view>
         <i-row i-class="box">
-            <i-col span="12" i-class="box-l">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/cleancode593a4357N46699934.jpg"></image>
-                <text class="text">亿级流量网站架构核心技术</text>
-            </i-col>
-            <i-col span="12" i-class="box-r">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/codeb8d043dc8ac03893.jpg"></image>
-                <text class="text">亿级流量网站架构核心技术</text>
-            </i-col>
-        </i-row>
-        <i-row i-class="box">
-            <i-col span="12" i-class="box-l">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/coder594a09fbNeaf385c9.jpg"></image>
-                <text class="text">亿级流量网站架构核心技术</text>
-            </i-col>
-            <i-col span="12" i-class="box-r">
-                <image style="width: 100%" mode="widthFix" src="http://img.hellocode.name//books/haker54ddac23Nde0e51fa.jpg"></image>
-                <text class="text">亿级流量网站架构核心技术</text>
+            <i-col @tap="detail({{ iterm.id }})" span="12" wx:for="{{ category.books }}" wx:for-item="iterm" wx:key="id">
+                <image style="width: 100%" mode="widthFix" src="{{ iterm.pictrue }}"></image>
+                <text class="text p-30">{{ iterm.book_name }}</text>
             </i-col>
         </i-row>
         <i-load-more i-class="footer-tip" tip="已经到底了" loading="{{ false }}" />
@@ -26,6 +12,7 @@
 
 <script>
 import wepy from 'wepy'
+import api from '@/utils/api'
 
 export default class List extends wepy.page {
     config = {
@@ -35,6 +22,39 @@ export default class List extends wepy.page {
             'i-col': '../components/iview-weapp/col/index',
             'i-load-more': '../components/iview-weapp/load-more/index'
         }
+    }
+    data = {
+        category: []
+    }
+    methods = {
+        detail(bookId) {
+            wepy.navigateTo({
+                url: 'detail?bookId=' + bookId
+            })
+        }
+    }
+    async getCategory(categoryId) {
+        let category = wepy.getStorageSync(`category-${categoryId}`)
+        if (!category) {
+            try {
+                let categoryRes = await api.request(`/api/categorys/${categoryId}`)
+                if (categoryRes.statusCode === 200) {
+                    category = categoryRes.data.data[0]
+                    wepy.setStorageSync(`category-${category.category_id}`, category)
+                }
+            } catch (err) {
+                console.log(err)
+                wepy.showModal({
+                    title: '提示',
+                    content: '服务器错误，请联系管理员'
+                })
+            }
+        }
+        this.category = category
+        this.$apply()
+    }
+    onLoad(options) {
+        this.getCategory(options.categoryId)
     }
 }
 </script>
