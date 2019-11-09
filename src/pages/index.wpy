@@ -27,7 +27,7 @@
             <i-row i-class="box">
                 <i-col span="12" @tap="detail({{ book.id }})" wx:for="{{ category.books }}" wx:for-item="book" wx:key="id">
                     <image style="width: 100%" mode="widthFix" src="{{ book.pictrue }}"></image>
-                    <text class="text p-30">{{ book.book_name }}</text>
+                    <text class="text p-20">{{ book.book_name }}</text>
                 </i-col>
             </i-row>
         </view>

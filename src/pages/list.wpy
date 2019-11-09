@@ -3,7 +3,7 @@
         <i-row i-class="box">
             <i-col @tap="detail({{ iterm.id }})" span="12" wx:for="{{ category.books }}" wx:for-item="iterm" wx:key="id">
                 <image style="width: 100%" mode="widthFix" src="{{ iterm.pictrue }}"></image>
-                <text class="text p-30">{{ iterm.book_name }}</text>
+                <text class="text p-20">{{ iterm.book_name }}</text>
             </i-col>
         </i-row>
         <i-load-more i-class="footer-tip" tip="已经到底了" loading="{{ false }}" />
