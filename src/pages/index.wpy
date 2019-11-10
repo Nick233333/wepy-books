@@ -66,7 +66,7 @@ import api from '@/utils/api'
 
 export default class Index extends wepy.page {
     config = {
-        navigationBarTitleText: '首页',
+        navigationBarTitleText: 'Books天地',
         'usingComponents': {
             'i-row': '../components/iview-weapp/row/index',
             'i-col': '../components/iview-weapp/col/index',

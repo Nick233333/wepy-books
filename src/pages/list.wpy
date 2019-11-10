@@ -16,7 +16,7 @@ import api from '@/utils/api'
 
 export default class List extends wepy.page {
     config = {
-        navigationBarTitleText: '列表',
+        navigationBarTitleText: '',
         usingComponents: {
             'i-row': '../components/iview-weapp/row/index',
             'i-col': '../components/iview-weapp/col/index',
@@ -51,6 +51,9 @@ export default class List extends wepy.page {
             }
         }
         this.category = category
+        wepy.setNavigationBarTitle({
+            title: category.category_name
+        })
         this.$apply()
     }
     onLoad(options) {

@@ -25,7 +25,7 @@ import api from '@/utils/api'
 
 export default class Detail extends wepy.page {
     config = {
-        navigationBarTitleText: '详情',
+        navigationBarTitleText: '',
         'usingComponents': {
             'i-row': '../components/iview-weapp/row/index',
             'i-col': '../components/iview-weapp/col/index',
@@ -53,6 +53,9 @@ export default class Detail extends wepy.page {
             }
         }
         this.book = book
+        wepy.setNavigationBarTitle({
+            title: book.book_name
+        })
         this.$apply()
     }
     onLoad(options) {
