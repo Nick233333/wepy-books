@@ -3,7 +3,6 @@
         <i-tabs color="#fedb1d" current="{{ current }}" @change="handleChange">
             <i-tab key="audio" title="音频"></i-tab>
             <i-tab key="location" title="位置"></i-tab>
-            <i-tab key="video" title="视频"></i-tab>
         </i-tabs>
         <i-row wx:if="{{ current === 'audio' }}">
             <i-col span="24" i-class="collapse-box">
@@ -38,18 +37,6 @@
                     style="width: 100%; height: 1300rpx;"
                     ></map>
                     <button bindopensetting="getLocation" open-type="openSetting">打开获取位置授权设置</button>
-            </i-col>
-        </i-row>
-        <i-row wx:if="{{ current === 'video' }}">
-            <i-col span="24">
-                <video style="width: 100%; height: 500rpx;"
-                src="http://img.hellocode.name/linus.mp4"
-                danmu-list="{{ danmuList }}"
-                enable-danmu
-                danmu-btn
-                controls
-                title="The mind behind Linux | Linus Torvalds"
-                ></video>
             </i-col>
         </i-row>
     </view>
@@ -100,17 +87,7 @@ export default class Other extends wepy.page {
         isAudioPlay: false,
         current: 'audio',
         latitude: '23.099994',
-        longitude: '113.324520',
-        danmuList: [
-            { text: '666', color: '#bbbec4', time: 78 },
-            { text: '传说中的 Linus 👀👀', color: '#5FB878', time: 15 },
-            { text: '👽linus', color: '#19be6b', time: 120 },
-            { text: '???😸', color: '#01AAED', time: 56 },
-            { text: 'hacker😂😂😂', color: '#5FB878', time: 45 },
-            { text: 'hahaha', color: '#5FB878', time: 42 },
-            { text: '😂😂😂', color: '#19be6b', time: 48 },
-            { text: '😸💀', color: '#2F4056', time: 89 }
-        ]
+        longitude: '113.324520'
     }
     playAudio() {
         if (this.innerAudioContext === null) {
