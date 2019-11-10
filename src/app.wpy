@@ -16,18 +16,13 @@ export default class extends wepy.app {
             'pages/index',
             'pages/list',
             'pages/detail',
-            'pages/other'
+            'pages/like',
         ],
         window: {
             backgroundTextStyle: 'light',
             navigationBarBackgroundColor: '#fedb1d',
             navigationBarTitleText: 'Books',
             navigationBarTextStyle: 'black'
-        },
-        'permission': {
-            'scope.userLocation': {
-                'desc': '请允许小程序获取您的位置'
-            }
         },
         tabBar: {
             list: [{
@@ -36,8 +31,8 @@ export default class extends wepy.app {
                 iconPath: 'images/homepage.png',
                 selectedIconPath: 'images/homepage_fill.png'
             }, {
-                pagePath: 'pages/other',
-                text: '其他',
+                pagePath: 'pages/like',
+                text: '最爱',
                 iconPath: 'images/like.png',
                 selectedIconPath: 'images/like_fill.png'
             }],

@@ -57,7 +57,7 @@ export default class List extends wepy.page {
         this.$apply()
     }
     onLoad(options) {
-        this.getCategory(options.categoryId ? options.categoryId : 1)
+        this.getCategory(1)
     }
 }
 </script>
