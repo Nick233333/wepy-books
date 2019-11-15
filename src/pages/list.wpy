@@ -1,9 +1,9 @@
 <template>
     <view>
         <i-row i-class="box">
-            <i-col @tap="detail({{ iterm.id }})" span="12" wx:for="{{ category.books }}" wx:for-item="iterm" wx:key="id">
-                <image style="width: 100%" mode="widthFix" src="{{ iterm.pictrue }}"></image>
-                <text class="text p-20">{{ iterm.book_name }}</text>
+            <i-col @tap="detail({{ item.id }})" span="12" wx:for="{{ category.books }}" wx:for-item="item" wx:key="id">
+                <image style="width: 100%" mode="widthFix" src="{{ item.pictrue }}"></image>
+                <text class="text p-20">{{ item.book_name }}</text>
             </i-col>
         </i-row>
         <i-load-more i-class="footer-tip" tip="已经到底了" loading="{{ false }}" />
@@ -43,7 +43,6 @@ export default class List extends wepy.page {
                     wepy.setStorageSync(`category-${category.category_id}`, category)
                 }
             } catch (err) {
-                console.log(err)
                 wepy.showModal({
                     title: '提示',
                     content: '服务器错误，请联系管理员'

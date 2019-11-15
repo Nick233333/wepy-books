@@ -1,9 +1,9 @@
 <template>
     <view>
         <i-row i-class="box">
-            <i-col @tap="detail({{ iterm.id }})" span="12" wx:for="{{ category.books }}" wx:for-item="iterm" wx:key="id">
-                <image style="width: 100%" mode="widthFix" src="{{ iterm.pictrue }}"></image>
-                <text class="text p-20">{{ iterm.book_name }}</text>
+            <i-col @tap="detail({{ item.id }})" span="12" wx:for="{{ myLiveList }}" wx:for-item="item" wx:key="id">
+                <image style="width: 100%" mode="widthFix" src="{{ item.pictrue }}"></image>
+                <text class="text p-20">{{ item.book_name }}</text>
             </i-col>
         </i-row>
         <i-load-more i-class="footer-tip" tip="已经到底了" loading="{{ false }}" />
@@ -16,7 +16,7 @@ import api from '@/utils/api'
 
 export default class List extends wepy.page {
     config = {
-        navigationBarTitleText: '',
+        navigationBarTitleText: '最爱',
         usingComponents: {
             'i-row': '../components/iview-weapp/row/index',
             'i-col': '../components/iview-weapp/col/index',
@@ -24,7 +24,7 @@ export default class List extends wepy.page {
         }
     }
     data = {
-        category: []
+        myLiveList: []
     }
     methods = {
         detail(bookId) {
@@ -33,31 +33,27 @@ export default class List extends wepy.page {
             })
         }
     }
-    async getCategory(categoryId) {
-        let category = wepy.getStorageSync(`category-${categoryId}`)
-        if (!category) {
+    async getMyLike() {
+        let myLiveList = wepy.getStorageSync('my-like')
+        if (!myLiveList) {
             try {
-                let categoryRes = await api.request(`/api/categorys/${categoryId}`)
-                if (categoryRes.statusCode === 200) {
-                    category = categoryRes.data.data[0]
-                    wepy.setStorageSync(`category-${category.category_id}`, category)
+                let response = await api.request(`/api/books/my-like`)
+                if (response.statusCode === 200) {
+                    myLiveList = response.data.data
+                    wepy.setStorageSync('my-like', myLiveList)
                 }
             } catch (err) {
-                console.log(err)
                 wepy.showModal({
                     title: '提示',
                     content: '服务器错误，请联系管理员'
                 })
             }
         }
-        this.category = category
-        wepy.setNavigationBarTitle({
-            title: category.category_name
-        })
+        this.myLiveList = myLiveList
         this.$apply()
     }
     onLoad(options) {
-        this.getCategory(1)
+        this.getMyLike()
     }
 }
 </script>
