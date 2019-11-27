@@ -18,7 +18,7 @@ export default class extends wepy.app {
             'pages/detail',
             'pages/like',
             'pages/about',
-            'pages/recommend-book',
+            'pages/recommend-book'
         ],
         window: {
             backgroundTextStyle: 'light',
@@ -37,7 +37,7 @@ export default class extends wepy.app {
                 text: '最爱',
                 iconPath: 'images/like.png',
                 selectedIconPath: 'images/like_fill.png'
-            },{
+            }, {
                 pagePath: 'pages/about',
                 text: '关于',
                 iconPath: 'images/about.png',
