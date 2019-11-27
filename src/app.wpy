@@ -17,6 +17,8 @@ export default class extends wepy.app {
             'pages/list',
             'pages/detail',
             'pages/like',
+            'pages/about',
+            'pages/recommend-book',
         ],
         window: {
             backgroundTextStyle: 'light',
@@ -35,6 +37,11 @@ export default class extends wepy.app {
                 text: '最爱',
                 iconPath: 'images/like.png',
                 selectedIconPath: 'images/like_fill.png'
+            },{
+                pagePath: 'pages/about',
+                text: '关于',
+                iconPath: 'images/about.png',
+                selectedIconPath: 'images/about_fill.png'
             }],
             color: '#80848f',
             selectedColor: '#fedb1d',

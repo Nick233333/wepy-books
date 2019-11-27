@@ -1,0 +1,23 @@
+<template>
+    <view>
+        我要推荐
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class Detail extends wepy.page {
+    config = {
+        navigationBarTitleText: '我要推荐',
+        'usingComponents': {
+        }
+    }
+}
+</script>
+
+<style lang="scss">
+page {
+    background: #fff;
+}
+</style>
