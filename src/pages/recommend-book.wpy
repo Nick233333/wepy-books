@@ -1,6 +1,9 @@
 <template>
     <view>
-        我要推荐
+        <i-input value="{{ book }}" title="书名：" autofocus placeholder="请输入书名（必填）" />
+        <i-input value="{{ author }}" title="作者：" placeholder="请输入作者（必填）" />
+        <i-input value="{{ recommend }}" title="推荐理由：" placeholder="请输入推荐理由（选填）" />
+        <button bind:click="handleClick" class="btn">提 交</button>
     </view>
 </template>
 
@@ -11,7 +14,21 @@ export default class Detail extends wepy.page {
     config = {
         navigationBarTitleText: '我要推荐',
         'usingComponents': {
+            'i-input': '../components/iview-weapp/input'
         }
+    }
+    data = {
+        book: '',
+        author: '',
+        recommend: ''
+    }
+    methods = {
+        handleClick() {
+            console.log('click')
+        }
+    }
+    onShareAppMessage() {
+        return { title: '我要推荐' }
     }
 }
 </script>
@@ -19,5 +36,13 @@ export default class Detail extends wepy.page {
 <style lang="scss">
 page {
     background: #fff;
+}
+.btn {
+    width: 90%;
+    border: none;
+    margin-top: 50rpx;
+    font-size: 32rpx;
+    color: #fff;
+    background: #fedb1d;
 }
 </style>
