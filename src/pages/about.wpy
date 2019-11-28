@@ -29,6 +29,9 @@ export default class Detail extends wepy.page {
             })
         }
     }
+    onShareAppMessage() {
+        return { title: '关于' }
+    }
 }
 </script>
 
