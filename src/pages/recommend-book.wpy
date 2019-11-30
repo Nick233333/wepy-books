@@ -1,14 +1,15 @@
 <template>
     <view>
-        <i-input value="{{ book }}" title="书名：" autofocus placeholder="请输入书名（必填）" />
-        <i-input value="{{ author }}" title="作者：" placeholder="请输入作者（必填）" />
-        <i-input value="{{ recommend }}" title="推荐理由：" placeholder="请输入推荐理由（选填）" />
-        <button bind:click="handleClick" class="btn">提 交</button>
+        <i-input bind:change="changeBook" value="{{ book }}" title="书名：" placeholder="请输入书名（必填）" />
+        <i-input bind:change="changeAuthor" value="{{ author }}" title="作者：" placeholder="请输入作者（必填）" />
+        <i-input bind:change="changeRecommend" value="{{ recommend }}" title="推荐理由：" placeholder="请输入推荐理由（选填）" />
+        <button @tap="submit" class="btn">提 交</button>
     </view>
 </template>
 
 <script>
 import wepy from 'wepy'
+import api from '@/utils/api'
 
 export default class Detail extends wepy.page {
     config = {
@@ -22,10 +23,49 @@ export default class Detail extends wepy.page {
         author: '',
         recommend: ''
     }
-    methods = {
-        handleClick() {
-            console.log('click')
+    async submit() {
+        try {
+            let result = await api.request({
+                url: '/api/recommends/',
+                method: 'post',
+                data: {
+                    book: this.book,
+                    author: this.author,
+                    recommend: this.recommend
+                }
+            })
+            if (result.statusCode === 201) {
+                wepy.showToast({
+                    title: '提交成功',
+                    icon: 'none',
+                    duration: 2000
+                })
+            }
+            if (result.statusCode === 400) {
+                wepy.showToast({
+                    title: '参数错误，请检查',
+                    icon: 'none',
+                    duration: 2000
+                })
+            }
+        } catch (err) {
+            wepy.showModal({
+                title: '提示',
+                content: '服务器错误，请联系管理员'
+            })
         }
+    }
+    changeBook(e) {
+        this.book = e.detail.detail.value
+        this.$apply()
+    }
+    changeAuthor(e) {
+        this.author = e.detail.detail.value
+        this.$apply()
+    }
+    changeRecommend(e) {
+        this.recommend = e.detail.detail.value
+        this.$apply()
     }
     onShareAppMessage() {
         return { title: '我要推荐' }

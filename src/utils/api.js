@@ -11,7 +11,7 @@ const request = async (options, showLoading = true) => {
     if (showLoading) {
         wepy.showLoading({title: '加载中'})
     }
-    options.url = host + '/' + options.url
+    options.url = host + options.url
     let response = await wepy.request(options)
 
     if (showLoading) {
