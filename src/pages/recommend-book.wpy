@@ -40,10 +40,14 @@ export default class Detail extends wepy.page {
                     icon: 'none',
                     duration: 2000
                 })
+                this.book = ''
+                this.author = ''
+                this.recommend = ''
+                this.$apply()
             }
             if (result.statusCode === 400) {
                 wepy.showToast({
-                    title: '参数错误，请检查',
+                    title: '信息填写不完整！',
                     icon: 'none',
                     duration: 2000
                 })
