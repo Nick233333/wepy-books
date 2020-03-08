@@ -1,6 +1,6 @@
 <template>
     <view>
-        <i-row i-class="box">
+        <i-row i-class="text-center m-t-20">
             <i-col i-class="box-iterm" @tap="detail({{ item.id }})" span="11" wx:for="{{ category.books }}" wx:for-item="item" wx:key="id">
                 <image style="width: 100%" mode="widthFix" src="{{ item.pictrue }}"></image>
                 <text class="text p-20">{{ item.book_name }}</text>
