@@ -1,6 +1,6 @@
 <template>
     <view>
-        <weswiper :option="swiper" class="swiper">
+        <weswiper :option="swiper">
             <view class="we-slide">
                 <image mode="widthFix" src="http://img.hellocode.name/banner-1.png"></image>
             </view>
@@ -10,9 +10,6 @@
             <view class="we-slide">
                 <image mode="widthFix" src="http://img.hellocode.name/banner-3.png"></image>
             </view>
-            <view class="we-slide">
-                <image mode="widthFix" src="http://img.hellocode.name/banner-4.png"></image>
-            </view>
         </weswiper>
         <wux-skeleton active wx:if="{{ isShow }}">
             <wux-skeleton-paragraph rounded rows="12" ></wux-skeleton-paragraph>
@@ -21,11 +18,11 @@
             <wux-skeleton-paragraph rounded rows="12" ></wux-skeleton-paragraph>
         </wux-skeleton>
         <view wx:for="{{ categorys }}" wx:for-item="category" wx:key="category_id">
-            <i-cell-group i-class="title border-b">
+            <i-cell-group i-class="title m-b-15 b-l-orange">
                 <i-cell title="{{ category.category_name }}" is-link @tap="category({{ category.category_id }})"></i-cell>
             </i-cell-group>
             <i-row i-class="box">
-                <i-col span="12" @tap="detail({{ book.id }})" wx:for="{{ category.books }}" wx:for-item="book" wx:key="id">
+                <i-col i-class="box-iterm" span="11" @tap="detail({{ book.id }})" wx:for="{{ category.books }}" wx:for-item="book" wx:key="id">
                     <image style="width: 100%" mode="widthFix" src="{{ book.pictrue }}"></image>
                     <text class="text p-20">{{ book.book_name }}</text>
                 </i-col>
@@ -36,16 +33,13 @@
 </template>
 
 <style lang="scss">
-.swiper {
-    background: #fff;
-}
 .we-slide {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     font-size: 2rem;
-    height: 275rpx;
+    height: 255rpx;
 }
 .we-slide > image {
     width: 100%;
@@ -57,6 +51,10 @@
 .t-center {
     text-align: center;
 }
+.b-l-orange {
+    border-left: 3px solid #fedb1d;
+}
+
 </style>
 
 <script>
@@ -84,7 +82,7 @@ export default class Index extends wepy.page {
         isShow: true,
         swiper: {
             direction: 'horizontal',
-            slideLength: 4,
+            slideLength: 3,
             speed: 1000
         },
         categorys: []

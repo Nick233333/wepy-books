@@ -4,9 +4,8 @@ page {
 }
 .box {
     text-align: center;
-    background: #fff;
-    padding-bottom: .5rem;
-    margin-bottom: .4rem;
+    // background: #fff;
+    margin-bottom: 15rpx;
 }
 .text {
     display: block;
@@ -16,8 +15,8 @@ page {
 .title {
     color: #495060;
 }
-.border-b {
-    border-bottom: 1px solid #e9eaec;
+.m-b-15 {
+    margin-bottom: 15rpx;;
 }
 .footer-tip {
     padding-bottom: 2rem;
@@ -28,4 +27,10 @@ page {
 .p-20 {
     padding: 20rpx;
 }
-
+.box-iterm {
+    margin-left: 20rpx;
+    padding-bottom: 30rpx;
+    padding-top: 30rpx;
+    background: #fff;
+    box-shadow: 0px 0px 10px 10px #e9eaec;
+}
