@@ -18,7 +18,7 @@
             <wux-skeleton-paragraph rounded rows="12" ></wux-skeleton-paragraph>
         </wux-skeleton>
         <view wx:for="{{ categorys }}" wx:for-item="category" wx:key="category_id">
-            <i-cell-group i-class="title m-b-15 b-l-orange">
+            <i-cell-group i-class="title m-b-20 b-l-orange">
                 <i-cell title="{{ category.category_name }}" is-link @tap="category({{ category.category_id }})"></i-cell>
             </i-cell-group>
             <i-row i-class="box">

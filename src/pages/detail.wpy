@@ -1,6 +1,6 @@
 <template>
     <view>
-        <i-row i-class="box">
+        <i-row i-class="img-box">
             <i-col span="24">
                 <image style="width: 70%;margin-top: 10px;" mode="widthFix" src="{{ book.pictrue }}"></image>
             </i-col>
@@ -63,3 +63,10 @@ export default class Detail extends wepy.page {
     }
 }
 </script>
+<style lang="scss">
+.img-box {
+    text-align: center;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+</style>
