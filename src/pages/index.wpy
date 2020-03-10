@@ -19,12 +19,12 @@
         </wux-skeleton>
         <view wx:for="{{ categorys }}" wx:for-item="category" wx:key="category_id">
             <i-cell-group i-class="title m-b-20 b-l-orange">
-                <i-cell title="{{ category.category_name }}" is-link @tap="category({{ category.category_id }})"></i-cell>
+                <i-cell value="更多" title="{{ category.category_name }}" is-link @tap="category({{ category.category_id }})"></i-cell>
             </i-cell-group>
             <i-row i-class="text-center">
                 <i-col i-class="box-iterm" span="11" @tap="detail({{ book.id }})" wx:for="{{ category.books }}" wx:for-item="book" wx:key="id">
                     <image style="width: 100%" mode="widthFix" src="{{ book.pictrue }}"></image>
-                    <text class="text p-20">{{ book.book_name }}</text>
+                    <text class="text p-15">{{ book.book_name }}</text>
                 </i-col>
             </i-row>
         </view>

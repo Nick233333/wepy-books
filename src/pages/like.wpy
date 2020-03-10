@@ -3,7 +3,7 @@
         <i-row i-class="text-center m-t-20">
             <i-col i-class="box-iterm" @tap="detail({{ item.id }})" span="11" wx:for="{{ myLiveList }}" wx:for-item="item" wx:key="id">
                 <image style="width: 100%" mode="widthFix" src="{{ item.pictrue }}"></image>
-                <text class="text p-20">{{ item.book_name }}</text>
+                <text class="text p-15">{{ item.book_name }}</text>
             </i-col>
         </i-row>
         <i-load-more i-class="footer-tip" tip="已经到底了" loading="{{ false }}" />
