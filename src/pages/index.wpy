@@ -125,5 +125,8 @@ export default class Index extends wepy.page {
     onShareAppMessage(res) {
         return { title: 'Books天地--小程序' }
     }
+    onShareTimeline() {
+        return { title: 'Books天地--小程序' }
+    }
   }
 </script>
